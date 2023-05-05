@@ -3,7 +3,7 @@ import { LandingPage } from "./pages/LandingPage";
 
 export function App() {
   return (
-    <Router>
+    <Router basename="/Figma-Lab-First-Page">
       <Routes>
         <Route path="/" element={<LandingPage/>} />
       </Routes>

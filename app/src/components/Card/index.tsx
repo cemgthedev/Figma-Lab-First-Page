@@ -65,184 +65,184 @@ export function Card({ products, setProducts, className }: CardProps) {
                 "
             ></div>
             <FigureQuartet list={products as Product[]} handleAbout={setProducts}/>
-                <div
-                    className="
-                        flex
-                        flex-col
-                        gap-8
-                        flex-none
-                        h-full
-                    "
-                >
-                    <Figure>
+            <div
+                className="
+                    flex
+                    flex-col
+                    gap-8
+                    flex-none
+                    h-full
+                "
+            >
+                <Figure>
+                    <Heading
+                        size="lg"
+                        className="
+                            text-white
+                            text-center
+                            animate-bottom
+                            w-[300px] 
+                        "
+                    >
+                        { product.title }
+                    </Heading>
+                    <FigureContent>
+                        <Text
+                            className="
+                                m-auto
+                                w-[256px] 
+                                text-white
+                                text-center
+                                font-medium
+                                animate-found
+                            "
+                        >
+                            { product.description }
+                        </Text>
                         <Heading
                             size="lg"
                             className="
-                                text-white
+                                text-sky-500
                                 text-center
-                                animate-bottom
-                                w-[300px] 
+                                animate-ping-blink
                             "
                         >
-                            { product.title }
+                            { product.price }
                         </Heading>
-                        <FigureContent>
-                            <Text
-                                className="
-                                    m-auto
-                                    w-[256px] 
-                                    text-white
-                                    text-center
-                                    font-medium
-                                    animate-found
-                                "
+                        <Button
+                            className="
+                                bg-sky-600
+                                shadow-blur
+                                transition
+                                hover:bg-sky-400
+                                hover:shadow-blur-hover
+                                animate-found-short
+                            "
+                        >
+                            <Label
+                                className="text-white"
                             >
-                                { product.description }
-                            </Text>
-                            <Heading
-                                size="lg"
-                                className="
-                                    text-sky-500
-                                    text-center
-                                    animate-ping-blink
-                                "
-                            >
-                                { product.price }
-                            </Heading>
-                            <Button
-                                className="
-                                    bg-sky-600
-                                    shadow-blur
-                                    transition
-                                    hover:bg-sky-400
-                                    hover:shadow-blur-hover
-                                    animate-found-short
-                                "
-                            >
-                                <Label
-                                    className="text-white"
-                                >
-                                    ADICIONAR
-                                </Label>
-                                <img src="/assets/icons/carrinho.svg" alt="" />
-                            </Button>
-                        </FigureContent>
-                    </Figure>
+                                ADICIONAR
+                            </Label>
+                            <img src="/Figma-Lab-First-Page/assets/icons/carrinho.svg" alt="" />
+                        </Button>
+                    </FigureContent>
+                </Figure>
+                <Figure>
                     <Figure>
-                        <Figure>
-                            <div
+                        <div
+                            className="
+                                flex
+                                gap-1
+                                items-center
+                                animate-top
+                            "
+                        >
+                            <Label
+                                size="sm"
                                 className="
-                                    flex
-                                    gap-1
-                                    items-center
-                                    animate-top
+                                    text-gray-600
+                                    max-sm:text-white
                                 "
                             >
-                                <Label
-                                    size="sm"
-                                    className="
-                                        text-gray-600
-                                        max-sm:text-white
-                                    "
-                                >
-                                    SUSTENTABILIDADE
-                                </Label>
-                                <img src="/assets/icons/i-sustentabilidade.svg" alt="" />
-                            </div>
-                            <FigureContent>
-                                {   
-                                    sustainability.map((item) => (
-                                        <div
-                                            key={nextId()}
-                                            className={clsx(
-                                                `
-                                                flex
-                                                gap-1
-                                                items-center
-                                                opacity-0
+                                SUSTENTABILIDADE
+                            </Label>
+                            <img src="/Figma-Lab-First-Page/assets/icons/i-sustentabilidade.svg" alt="" />
+                        </div>
+                        <FigureContent>
+                            {   
+                                sustainability.map((item) => (
+                                    <div
+                                        key={nextId()}
+                                        className={clsx(
+                                            `
+                                            flex
+                                            gap-1
+                                            items-center
+                                            opacity-0
+                                            max-sm:text-white
+                                            `,
+                                            {
+                                                'animate-found-short': getIndex(product.sustainability, item) === 0,
+                                                'animate-found-medium': getIndex(product.sustainability, item) === 1,
+                                                'animate-found-long': getIndex(product.sustainability, item) === 2,
+                                            }
+                                        )}
+                                    >
+                                        <img src="/Figma-Lab-First-Page/assets/icons/list-icon.svg" alt="" />
+                                        <Text
+                                            size="sm"
+                                            className="
+                                                text-gray-600
                                                 max-sm:text-white
-                                                `,
-                                                {
-                                                    'animate-found-short': getIndex(product.sustainability, item) === 0,
-                                                    'animate-found-medium': getIndex(product.sustainability, item) === 1,
-                                                    'animate-found-long': getIndex(product.sustainability, item) === 2,
-                                                }
-                                            )}
+                                            "
                                         >
-                                            <img src="/assets/icons/list-icon.svg" alt="" />
-                                            <Text
-                                                size="sm"
-                                                className="
-                                                    text-gray-600
-                                                    max-sm:text-white
-                                                "
-                                            >
-                                                {item}
-                                            </Text>
-                                        </div>
-                                    ))
-                                }
-                            </FigureContent>
-                            
-                        </Figure>
-                        <hr className="h-[4px] bg-white"/>
-                        <Figure>
-                            <div
+                                            {item}
+                                        </Text>
+                                    </div>
+                                ))
+                            }
+                        </FigureContent>
+                        
+                    </Figure>
+                    <hr className="h-[4px] bg-white"/>
+                    <Figure>
+                        <div
+                            className="
+                                flex
+                                gap-1
+                                items-center
+                                animate-top
+                            "
+                        >
+                            <Label
+                                size="sm"
                                 className="
-                                    flex
-                                    gap-1
-                                    items-center
-                                    animate-top
+                                    text-gray-600
+                                    max-sm:text-white
                                 "
                             >
-                                <Label
-                                    size="sm"
-                                    className="
-                                        text-gray-600
-                                        max-sm:text-white
-                                    "
-                                >
-                                    ENTREGA
-                                </Label>
-                                <img src="/assets/icons/i-entrega.svg" alt="" />
-                            </div>
-                            <FigureContent>
-                            {
-                                    delivery.map((item) => (
-                                        <div
-                                            key={nextId()}
-                                            className={clsx(
-                                                `
-                                                flex
-                                                gap-1
-                                                items-center
-                                                opacity-0
-                                                `,
-                                                {
-                                                    'animate-found-short': getIndex(product.delivery, item) === 0,
-                                                    'animate-found-medium': getIndex(product.delivery, item) === 1,
-                                                    'animate-found-long': getIndex(product.delivery, item) === 2,
-                                                }
-                                            )}
+                                ENTREGA
+                            </Label>
+                            <img src="/Figma-Lab-First-Page/assets/icons/i-entrega.svg" alt="" />
+                        </div>
+                        <FigureContent>
+                        {
+                                delivery.map((item) => (
+                                    <div
+                                        key={nextId()}
+                                        className={clsx(
+                                            `
+                                            flex
+                                            gap-1
+                                            items-center
+                                            opacity-0
+                                            `,
+                                            {
+                                                'animate-found-short': getIndex(product.delivery, item) === 0,
+                                                'animate-found-medium': getIndex(product.delivery, item) === 1,
+                                                'animate-found-long': getIndex(product.delivery, item) === 2,
+                                            }
+                                        )}
+                                    >
+                                        <img src="/Figma-Lab-First-Page/assets/icons/list-icon.svg" alt="" />
+                                        <Text
+                                            size="sm"
+                                            className="
+                                                text-gray-600
+                                                max-sm:text-white
+                                            "
                                         >
-                                            <img src="/assets/icons/list-icon.svg" alt="" />
-                                            <Text
-                                                size="sm"
-                                                className="
-                                                    text-gray-600
-                                                    max-sm:text-white
-                                                "
-                                            >
-                                                {item}
-                                            </Text>
-                                        </div>
-                                    ))
-                                }
-                            </FigureContent>
-                            
-                        </Figure>
+                                            {item}
+                                        </Text>
+                                    </div>
+                                ))
+                            }
+                        </FigureContent>
+                        
                     </Figure>
-                </div>
+                </Figure>
+            </div>
         </div>
     );
 }
