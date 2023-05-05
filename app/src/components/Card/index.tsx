@@ -23,9 +23,11 @@ export function Card({ products, setProducts, className }: CardProps) {
     const [delivery, setDelivery] = useState([] as string[]);
 
     useEffect(() => {
-        setProduct(products[0] as Product);
-        setSustainability(products[0].sustainability as string[]);
-        setDelivery(products[0].delivery as string[]);
+        if(products.length > 0){
+            setProduct(products[0] as Product);
+            setSustainability(products[0].sustainability as string[]);
+            setDelivery(products[0].delivery as string[]);
+        }
     }, [products]);
 
     function getIndex(list:string[], item: string) {

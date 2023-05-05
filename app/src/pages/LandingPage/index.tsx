@@ -1,6 +1,6 @@
 import { Card } from "../../components/Card";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export interface Product {
     id: number,
