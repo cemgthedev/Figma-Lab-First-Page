@@ -1,13 +1,25 @@
 import clsx from "clsx";
 
 import "../../styles/global.css";
+import nextId from "react-id-generator";
+import { Product } from "../../pages/LandingPage";
 
 export interface FigureQuartetProps {
-    list: string[],
-    className?: string
+    list: Product[],
+    className?: string,
+    handleAbout: Function
 }
 
-export function FigureQuartet({list, className}: FigureQuartetProps) {
+export function FigureQuartet({list, className, handleAbout}: FigureQuartetProps) {
+    function handleAboutActivate(id: number) {
+        handleAbout((prevState: Product[]) => [...prevState.filter(product => product.id == id), ...prevState.filter(product => product.id != id)]);
+    }
+
+    function getIndex(list:Product[], id:number) {
+        const item = list.filter(i => i.id === id);
+        return list.indexOf(item[0]) + 1;
+    }
+
     return (
         <div
             className={clsx(
@@ -21,13 +33,14 @@ export function FigureQuartet({list, className}: FigureQuartetProps) {
             )}
         >
             <img 
-                src={list[0]} 
+                src={list[0].imageUrl} 
                 alt="" 
                 className="
-                    ring-2
-                    ring-slate-200
-                    rounded-[4px]
-                "
+                    rounded-lg
+                    animate-bottom
+                    w-[300px]
+                    h-[335px]
+                    "
             />
             <div
                 className="
@@ -39,7 +52,23 @@ export function FigureQuartet({list, className}: FigureQuartetProps) {
             >
                 {
                     list.slice(1, list.length).map((item) => (
-                        <img src={item} alt="" />
+                        <img 
+                            onClick={() => handleAboutActivate(item.id)}
+                            key={nextId()}
+                            src={item.imageUrl} 
+                            alt="" 
+                            className={clsx(
+                                `
+                                    rounded-md
+                                    h-[96px]
+                                `,
+                                {
+                                    'animate-rigth': getIndex(list, item.id) === 2,
+                                    'animate-top': getIndex(list, item.id) === 3,
+                                    'animate-left': getIndex(list, item.id) === 4
+                                }
+                            )}
+                        />
                     ))
                 }
             </div>
