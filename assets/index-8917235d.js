@@ -188,4 +188,4 @@ Error generating stack: `+i.message+`
                 justify-center
                 h-screen
                 overflow-auto
-            `,children:z.jsx(tm,{className:"bg-slate-200",products:e,setProducts:t})})}function lm(){return z.jsx(qp,{children:z.jsx(Jp,{children:z.jsx(Uc,{path:"/",element:z.jsx(rm,{})})})})}li.createRoot(document.getElementById("root")).render(z.jsx(rf.StrictMode,{children:z.jsx(lm,{})}));
+            `,children:z.jsx(tm,{className:"bg-slate-200",products:e,setProducts:t})})}function lm(){return z.jsx(qp,{basename:"/Figma-Lab-First-Page",children:z.jsx(Jp,{children:z.jsx(Uc,{path:"/",element:z.jsx(rm,{})})})})}li.createRoot(document.getElementById("root")).render(z.jsx(rf.StrictMode,{children:z.jsx(lm,{})}));
