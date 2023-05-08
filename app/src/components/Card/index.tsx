@@ -1,15 +1,16 @@
 import clsx from "clsx";
-import { Product } from "../../pages/LandingPage";
+import { useEffect, useState } from "react";
+import nextId from "react-id-generator";
+
+import "../../styles/global.css";
+import { Product } from "../../models/Product";
 import { Figure } from "../../components/Figure";
 import { FigureQuartet } from "../../components/FigureQuartet";
 import { Heading } from "../../components/Heading";
 import { Label } from "../../components/Label";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
-import "../../styles/global.css"
 import { FigureContent } from "../../components/FigureContent";
-import { useEffect, useState } from "react";
-import nextId from "react-id-generator";
 
 export interface CardProps {
     products: Product[],

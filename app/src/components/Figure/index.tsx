@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
+import '../../styles/global.css';
+
 export interface FigureProps {
     children: ReactNode,
     className?:string

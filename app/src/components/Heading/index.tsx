@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import clsx from "clsx";
 
-import "../../styles/global.css";
-
 export interface HeadingProps {
     size?: string,
     children: ReactNode,

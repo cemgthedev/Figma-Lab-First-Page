@@ -1,8 +1,8 @@
 import clsx from "clsx";
-
-import "../../styles/global.css";
 import nextId from "react-id-generator";
-import { Product } from "../../pages/LandingPage";
+
+import '../../styles/global.css';
+import { Product } from "../../models/Product";
 
 export interface FigureQuartetProps {
     list: Product[],
